@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { GraphQLModule } from './graphql.module';
@@ -11,12 +10,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AuthComponent
+    AuthComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +28,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],

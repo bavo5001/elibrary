@@ -10,11 +10,16 @@
   align-items: center;
 }
 .form__field{
-
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth__etc{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 5px auto;
 }
 @media screen and  (max-width: 768px) {
 .auth__section {
