@@ -1,0 +1,18 @@
+<section class="auth__section">
+  <img src="assets/icons/icons8-study-96.png" alt="">
+  <h4>Sign in</h4>
+
+  <form [formGroup]="form" (ngSubmit)="OnSubmit()">
+    <mat-form-field class="form__field">
+      <label>
+        <input type="text" matInput formControlName="login" color="warning" required placeholder="Login">
+      </label>
+    </mat-form-field>
+    <mat-form-field class="form__field">
+      <label>
+        <input type="text" matInput formControlName="password" color="warning" required placeholder="Password">
+      </label>
+    </mat-form-field>
+    <button mat-raised-button [disabled]="form.invalid" color="warning">Confirm</button>
+  </form>
+</section>

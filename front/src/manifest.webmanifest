@@ -1,6 +1,6 @@
 {
-  "name": "front",
-  "short_name": "front",
+  "name": "e-library",
+  "short_name": "e-library",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
@@ -46,6 +46,10 @@
       "src": "assets/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
-    }
+    },
+     {
+          "src": "assets/icons/icons8-study-96.png",
+          "type": "image/png"
+     }
   ]
 }
