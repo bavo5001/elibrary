@@ -1,3 +1,4 @@
+import { AngularSignaturePadModule } from 'angular-signature-pad/angular-signature-pad';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,7 +13,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
-
 @NgModule({
   declarations: [
     AuthComponent,
@@ -25,6 +25,7 @@ import { AppComponent } from './app.component';
     GraphQLModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    AngularSignaturePadModule.forRoot(),
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
