@@ -15,8 +15,9 @@ export class AuthComponent implements OnInit {
       // }
     }
   form = new FormGroup({
+    name: new FormControl(null, Validators.required),
     login: new FormControl(null, Validators.required),
-    password: new FormControl(null, Validators.required)
+    password: new FormControl(null, [Validators.required, Validators.minLength(6)])
   });
 
   // @ViewChild(SignaturePad) signaturePad: SignaturePad;

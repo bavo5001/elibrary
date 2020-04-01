@@ -15,10 +15,12 @@ import {SignaturePadModule} from 'angular2-signaturepad';
 import {ZXingScannerModule} from "@zxing/ngx-scanner";
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
+    AppComponent,
     AuthComponent,
-    AppComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,

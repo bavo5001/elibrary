@@ -1,0 +1,28 @@
+.auth__section{
+  margin: 0 auto;
+  background: #707070;
+  color: white;
+  width: 60%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form__field{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth__etc{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and  (max-width: 768px) {
+  .auth__section {
+    width:100%;
+  }
+}
