@@ -9,6 +9,7 @@ import { AuthComponent } from './components/auth/auth.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {LazyAdminModule} from "./admin/lazy-admin/lazy-admin.module";
 
 import { AppComponent } from './app.component';
 import {SignaturePadModule} from 'angular2-signaturepad';
@@ -16,11 +17,13 @@ import {ZXingScannerModule} from "@zxing/ngx-scanner";
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
+import { BooksComponent } from './components/books/books.component';
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    LoginComponent
+    LoginComponent,
+    BooksComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { LoginComponent } from './components/login/login.component';
     GraphQLModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    LazyAdminModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,

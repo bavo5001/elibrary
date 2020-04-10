@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "lib": [
+      "esnext.asynciterable"
+    ],
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
