@@ -5,9 +5,8 @@
 
   <form [formGroup]="form" (ngSubmit)="OnSubmit()">
     <mat-form-field color="primary" class="form__field">
-      <label>
+      <mat-label>Name</mat-label>
         <input type="text" matInput formControlName="name" color="primary" required placeholder="Name">
-      </label>
     </mat-form-field>
     <mat-form-field class="form__field">
       <label>
@@ -19,7 +18,7 @@
         <input type="password" matInput formControlName="password" color="primary" required placeholder="Password">
       </label>
     </mat-form-field>
-    <div class="form__field"><button class="form__button" mat-raised-button [disabled]="form.invalid" color="warning">Sign up it's free</button></div>
+    <div class="form__field"><button class="form__button" color="primary" mat-raised-button [disabled]="form.invalid">Sign up it's free</button></div>
   </form>
   <div class="auth__etc">
     <h4><a routerLink="/login">Have account? Sign in</a></h4>
