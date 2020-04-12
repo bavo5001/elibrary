@@ -1,18 +1,39 @@
+
+.full{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+h1{
+  margin-top: 20px;
+}
+h4, a{
+  color:#707070;
+  text-decoration: none;
+}
 .auth__section{
-  margin: 0 auto;
-  background: #707070;
-  color: white;
-  width: 60%;
+  color:#707070;
+  background: #fff;
+  width: 45%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.sign_png{
+  width: 100px;
+  height: 100px;
+}
 .form__field{
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5px;
+}
+.form__button{
+  margin-top: 10px;
 }
 .auth__etc{
   margin-top: 15px;
@@ -21,9 +42,46 @@
   justify-content: center;
   align-items: center;
 }
-@media screen and  (max-width: 768px) {
-.auth__section {
-  width:100%;
+/*Right frame*/
+.try{
+  width:55%;
+  height: 100vh;
+  background-color: #4c2c14;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+.try__h2{
+  font-weight: 900;
+  font-size: 40px;
+  color: white;
+}
+.try__h4{
+  color:white;
+  font-weight: 600;
+  font-size: 20px;
+}
+@media screen and  (max-width: 992px) {
+  .full{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .try{
+    height: 20vh;
+    width: 100%;
+  }
+  .try__h2 {
+    font-size: 30px;
+  }
+  .try__h4{
+    font-size: 15px;
+  }
+  .auth__section {
+    height: 80vh;
+    width:100%;
+  }
 }
 

@@ -1,27 +1,33 @@
-<section class="auth__section">
-  <img src="assets/icons/icons8-study-96.png" alt="">
+<section class="full">
+ <section class="auth__section">
+   <img class="sign_png" src="assets/icons/magazine.png" alt="">
   <h1>Sign up</h1>
 
   <form [formGroup]="form" (ngSubmit)="OnSubmit()">
-    <mat-form-field class="form__field">
+    <mat-form-field color="primary" class="form__field">
       <label>
-        <input type="text" matInput formControlName="name" color="warning" required placeholder="Name">
+        <input type="text" matInput formControlName="name" color="primary" required placeholder="Name">
       </label>
     </mat-form-field>
     <mat-form-field class="form__field">
       <label>
-        <input type="text" matInput formControlName="login" color="warning" required placeholder="Login">
+        <input type="text" matInput formControlName="login" color="primary" required placeholder="Login">
       </label>
     </mat-form-field>
     <mat-form-field class="form__field">
       <label>
-        <input type="password" matInput formControlName="password" color="warning" required placeholder="Password">
+        <input type="password" matInput formControlName="password" color="primary" required placeholder="Password">
       </label>
     </mat-form-field>
-    <div class="form__field"><button class="form__button" mat-raised-button [disabled]="form.invalid" color="warning">Confirm</button></div>
+    <div class="form__field"><button class="form__button" mat-raised-button [disabled]="form.invalid" color="warning">Sign up it's free</button></div>
   </form>
   <div class="auth__etc">
     <h4><a routerLink="/login">Have account? Sign in</a></h4>
     <h4><a href="#">Sign up with Google</a></h4>
   </div>
+ </section>
+  <section class="try">
+    <h2 class="try__h2">Try E-library free for 14 days</h2>
+    <h4 class="try__h4">No credit card required</h4>
+  </section>
 </section>

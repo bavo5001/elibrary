@@ -1,22 +1,27 @@
+<section class="full">
 <section class="auth__section">
-  <img src="assets/icons/icons8-study-96.png" alt="">
+  <img class="sign_png" src="assets/icons/magazine.png" alt="">
+
   <h1>Sign in</h1>
 
   <form [formGroup]="form" (ngSubmit)="OnSubmit()">
     <mat-form-field class="form__field">
-      <label>
-        <input type="text" matInput formControlName="login" color="warning" required placeholder="Login">
-      </label>
+      <mat-label>Login</mat-label>
+        <input type="text" matInput formControlName="login" color="warning" required>
     </mat-form-field>
     <mat-form-field class="form__field">
-      <label>
-        <input type="password" matInput formControlName="password" color="warning" required placeholder="Password">
-      </label>
+      <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" color="warning" required>
     </mat-form-field>
-    <div class="form__field"><button class="form__button" mat-raised-button [disabled]="form.invalid" color="warning">Confirm</button></div>
+    <div class="form__field"><button class="form__button" mat-raised-button [disabled]="form.invalid" color="warning">Sign in</button></div>
   </form>
   <div class="auth__etc">
     <h4><a routerLink="/auth">Don't have account? Sign up</a></h4>
     <h4><a href="#">Sign in with Google</a></h4>
   </div>
+</section>
+  <section class="hello">
+   <h2 class="hello__h2">Hello, Welcome back</h2>
+    <h4 class="hello__h4">Sign into your account here</h4>
+  </section>
 </section>
