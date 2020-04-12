@@ -18,6 +18,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 import { BooksComponent } from './components/books/books.component';
+import {MatTableModule} from "@angular/material/table";
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { BooksComponent } from './components/books/books.component';
     FormsModule,
     ReactiveFormsModule,
     SignaturePadModule,
-    ZXingScannerModule
+    ZXingScannerModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
