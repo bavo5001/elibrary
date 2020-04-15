@@ -85,5 +85,9 @@ h4, a{
     height: 80vh;
     width:100%;
   }
+  .sign_png{
+    width: 70px;
+    height: 70px;
+  }
 }
 

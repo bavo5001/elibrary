@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^6.10.14",
-    "@nestjs/config": "^0.2.3",
+    "@nestjs/config": "^0.2.4",
     "@nestjs/core": "^6.10.14",
     "@nestjs/graphql": "^6.6.2",
     "@nestjs/jwt": "^6.1.2",
@@ -38,7 +38,7 @@
     "passport-local": "^1.0.0",
     "pg": "^7.18.2",
     "pm2": "^4.2.3",
-    "postgraphile": "^4.5.5",
+    "postgraphile": "^4.6.0",
     "postgraphile-nest": "^1.0.5",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
