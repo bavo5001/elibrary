@@ -48,11 +48,24 @@ h4, a{
 .hello{
   width:55%;
   height: 100vh;
-  background-color: #4c2c14;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 12s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .hello__h2{
   font-weight: 900;
@@ -65,24 +78,28 @@ h4, a{
   font-size: 20px;
 }
 @media screen and  (max-width: 992px) {
-  .full{
+  .full {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
   }
-  .hello{
+
+  .hello {
     height: 20vh;
     width: 100%;
   }
+
   .hello__h2 {
     font-size: 30px;
   }
-  .hello__h4{
+
+  .hello__h4 {
     font-size: 15px;
   }
+
   .auth__section {
     height: 80vh;
-    width:100%;
+    width: 100%;
   }
 }
