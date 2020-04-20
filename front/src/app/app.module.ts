@@ -11,6 +11,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LazyAdminModule} from "./admin/lazy-admin/lazy-admin.module";
 
+
 import { AppComponent } from './app.component';
 import {SignaturePadModule} from 'angular2-signaturepad';
 import {ZXingScannerModule} from "@zxing/ngx-scanner";
@@ -19,6 +20,10 @@ import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 import { BooksComponent } from './components/books/books.component';
 import {MatTableModule} from "@angular/material/table";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {NgxSpinnerModule} from "ngx-spinner";
+import {BooksApiService} from "./components/books/books-api.service";
+import {MatCard, MatCardModule} from "@angular/material/card";
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,9 +46,12 @@ import {MatTableModule} from "@angular/material/table";
     ReactiveFormsModule,
     SignaturePadModule,
     ZXingScannerModule,
-    MatTableModule
+    MatTableModule,
+    MatProgressSpinnerModule,
+    NgxSpinnerModule,
+    MatCardModule,
   ],
-  providers: [],
+  providers: [BooksApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

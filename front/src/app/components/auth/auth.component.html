@@ -1,6 +1,6 @@
 <section class="full">
  <section class="auth__section">
-   <img class="sign_png" src="assets/icons/magazine.png" alt="">
+   <img class="sign_png" src="assets/icons/study.png" alt="">
   <h1>Sign up</h1>
 
   <form [formGroup]="form" (ngSubmit)="OnSubmit()">
@@ -9,19 +9,17 @@
         <input type="text" matInput formControlName="name" color="primary" required placeholder="Name">
     </mat-form-field>
     <mat-form-field class="form__field">
-      <label>
+      <mat-label>Login</mat-label>
         <input type="text" matInput formControlName="login" color="primary" required placeholder="Login">
-      </label>
     </mat-form-field>
     <mat-form-field class="form__field">
-      <label>
+      <mat-label>Password</mat-label>
         <input type="password" matInput formControlName="password" color="primary" required placeholder="Password">
-      </label>
     </mat-form-field>
     <div class="form__field"><button class="form__button" color="primary" mat-raised-button [disabled]="form.invalid">Sign up it's free</button></div>
   </form>
   <div class="auth__etc">
-    <h4><a routerLink="/login">Have account? Sign in</a></h4>
+    <h4><a routerLink="/login">Have an account? Sign in</a></h4>
     <h4><a href="#">Sign up with Google</a></h4>
   </div>
  </section>
