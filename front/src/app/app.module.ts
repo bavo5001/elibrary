@@ -23,7 +23,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {NgxSpinnerModule} from "ngx-spinner";
 import {BooksApiService} from "./components/books/books-api.service";
-import {MatCard, MatCardModule} from "@angular/material/card";
+import {MatCardModule} from "@angular/material/card";
 @NgModule({
   declarations: [
     AppComponent,

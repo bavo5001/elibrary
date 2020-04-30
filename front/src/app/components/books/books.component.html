@@ -1,10 +1,9 @@
 <h1>Books Api Search</h1>
-<input matInput type="text" #search>
+<input type="search" matInput #search>
 <button mat-raised-button color="primary" (click)="googleBooks(search.value)">Confirm</button>
-<div *ngFor="let book of (books$ | async)">
-   <mat-card>
-     {{book}}
-     {{book.volumeInfo.title}}
+<div *ngFor="let book of books$">
+   <mat-card *ngIf="book" color="warn">
+     {{book.kind | json}}
      <img src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="">
    </mat-card>
 </div>

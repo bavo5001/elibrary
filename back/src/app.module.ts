@@ -1,50 +1,57 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import {Module} from '@nestjs/common';
+import {TypeOrmModule, TypeOrmModuleOptions} from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-import {TypeOrmModule} from "@nestjs/typeorm";
-import {ConfigModule} from "@nestjs/config";
-import {GraphQLModule} from "@nestjs/graphql";
-
+import {ConfigModule, ConfigService} from '@nestjs/config';
+import { GraphQLModule } from '@nestjs/graphql';
 @Module({
   imports: [
-      AuthModule,
-      UsersModule,
-      ConfigModule.forRoot({
-        isGlobal:true
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: async (config: ConfigService) => {
+        return {
+          type: 'postgres' as 'postgres',
+          host: config.get('POSTGRES_HOST'),
+          port: 5432,
+          username: 'root',
+          password: config.get('POSTGRES_PASSWORD'),
+          database: config.get('POSTGRES_DATABASE'),
+          entities: [__dirname + '/**/*.entity{.ts,.js}'],
+          synchronize: true,
+        } as TypeOrmModuleOptions;
+      },
     }),
-    //   TypeOrmModule.forRootAsync({
-    //       useFactory: async () => ({
-    //         type: 'postgres' as 'postgres',
-    //         host: process.env.POSTGRES_HOST,
-    //         port: Number(process.env.PORT),
-    //         username: process.env.POSTGRES_USER,
-    //         password: process.env.POSTGRES_PASSWORD,
-    //         database: process.env.POSTGRES_DATABASE,
-    //         entities: [],
-    //         synchronize: true,
-    //   })
-    // })
-      TypeOrmModule.forRoot({
-        type: 'postgres',
-        host: process.env.POSTGRES_HOST,
-        port: Number(process.env.POSTGRES_PORT),
-        username: process.env.POSTGRES_USER,
-        password: process.env.POSTGRES_PASSWORD,
-        database: process.env.POSTGRES_DATABASE,
-        entities: [],
-        synchronize: true,
-      }),
-      GraphQLModule.forRoot({
-        autoSchemaFile: true,
-        playground: true,
-        cors: true
-      })
-  ],
-  controllers: [AppController],
-  providers: [AppService],
-})
-export class AppModule {
+    //  TypeOrmModule.forRoot({
+    //      type: 'postgres',
+    //      username: process.env.POSTGRES_USER,
+    //      password: process.env.POSTGRES_PASSWORD,
+    //      port: Number(process.env.POSTGRES_PORT),
+    //      host: process.env.POSTGRES_HOST,
+    //      database: process.env.POSTGRES_DATABASE,
+    //      synchronize: true,
+    //      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+    //      cache: true
+    //  } ),
+    AuthModule,
+    UsersModule,
+    ConfigModule.forRoot({
+      isGlobal: true,
+     // envFilePath: '.env',
+    }),
 
+      // GraphQLModule.forRootAsync({
+      //     useFactory: () => ({
+      //         autoSchemaFile: 'schema.gql',
+      //         playground: true,
+      //         debug: true,
+      //         cors: {
+      //             credentials: true,
+      //             origin: true,
+      //         },
+      //     }),
+      // }),
+  ]
+})
+export class AppModule{
 }

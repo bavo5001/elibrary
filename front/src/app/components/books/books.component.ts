@@ -1,20 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
 import {BooksApiService} from "./books-api.service";
-import {Observable} from "rxjs";
+import {Observable, throwError} from "rxjs";
+import {catchError} from "rxjs/operators";
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
-export class BooksComponent implements OnInit{
-  books$: Observable<Array<any>>;
-  ngOnInit(): void {
-   this.books$ = this.booksApiService.SearchGoogleBooks('javascript');
+export class BooksComponent implements AfterViewInit {
+  books$;
+
+  constructor(private booksApiService: BooksApiService) {
   }
 
-  constructor(private booksApiService: BooksApiService) { }
+  ngAfterViewInit(): void {
+    this.booksApiService.SearchGoogleBooks('javascript').subscribe();
+  }
+
+
   googleBooks(s) {
-    this.books$ = this.booksApiService.SearchGoogleBooks(s);
+    this.booksApiService.SearchGoogleBooks(s).subscribe((book) => this.books$ = book);
   }
-  }
+}
