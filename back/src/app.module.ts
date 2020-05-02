@@ -1,29 +1,27 @@
 import { Module } from '@nestjs/common';
 import 'reflect-metadata';
-import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
-import {SequelizeModule} from "@nestjs/sequelize";
+import { SequelizeModule } from '@nestjs/sequelize';
+import { ReaderModule } from './reader/reader.module';
+import { BooksModule } from './books/books.module';
 @Module({
   imports: [
-    // TypeOrmModule.forRootAsync({
+    // SequelizeModule.forRootAsync({
     //   imports: [ConfigModule],
+    //   useFactory: (configService: ConfigService) => ({
+    //     dialect: 'mysql',
+    //     host: configService.get<string>('HOST'),
+    //     port: configService.get<string>('PORT'),
+    //     username: configService.get<string>('USERNAME'),
+    //     password: configService.get<string>('PASSWORD'),
+    //     database: configService.get<string>('DATABASE'),
+    //     models: [],
+    //   }),
     //   inject: [ConfigService],
-    //   useFactory: async (config: ConfigService) => {
-    //     return {
-    //       type: 'postgres' as 'postgres',
-    //       host: config.get('POSTGRES_HOST'),
-    //       port: 5432,
-    //       username: 'root',
-    //       password: config.get('POSTGRES_PASSWORD'),
-    //       database: config.get('POSTGRES_DATABASE'),
-    //       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-    //       synchronize: true,
-    //     } as TypeOrmModuleOptions;
-    //   },
-    // }),
+    // });
     SequelizeModule.forRoot({
       dialect: 'postgres',
       host: process.env.POSTGRES_HOST,
@@ -37,8 +35,9 @@ import {SequelizeModule} from "@nestjs/sequelize";
     UsersModule,
     ConfigModule.forRoot({
       isGlobal: true,
-      // envFilePath: '.env',
     }),
+    ReaderModule,
+    BooksModule,
 
     // GraphQLModule.forRootAsync({
     //     useFactory: () => ({

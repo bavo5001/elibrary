@@ -5,9 +5,9 @@ import { AuthController } from './auth.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthEntity } from './auth.entity';
 import { LoggerMiddleware } from '../logger.middleware';
-import {UsersService} from "../users/users.service";
-import {SequelizeModule} from "@nestjs/sequelize";
-import {JwtStrategy} from "./jwt.strategy";
+import { UsersService } from '../users/users.service';
+import { SequelizeModule } from '@nestjs/sequelize';
+import { JwtStrategy } from './jwt.strategy';
 
 @Module({
   imports: [SequelizeModule.forFeature([AuthEntity])],

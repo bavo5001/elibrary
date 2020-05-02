@@ -1,23 +1,26 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {SignaturePad} from "angular2-signaturepad/signature-pad";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { SignaturePad } from "angular2-signaturepad/signature-pad";
 
 @Component({
-  selector: 'app-auth',
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css']
+  selector: "app-auth",
+  templateUrl: "./auth.component.html",
+  styleUrls: ["./auth.component.css"],
 })
 export class AuthComponent implements OnInit {
-    ngOnInit(): void {
-      //   // this.signaturePad is now available
-      //   this.signaturePad.set('minWidth', 5); // set szimek/signature_pad options at runtime
-      //   this.signaturePad.clear(); // invoke functions from szimek/signature_pad API
-      // }
-    }
+  ngOnInit(): void {
+    //   // this.signaturePad is now available
+    //   this.signaturePad.set('minWidth', 5); // set szimek/signature_pad options at runtime
+    //   this.signaturePad.clear(); // invoke functions from szimek/signature_pad API
+    // }
+  }
   form = new FormGroup({
     name: new FormControl(null, Validators.required),
     login: new FormControl(null, Validators.required),
-    password: new FormControl(null, [Validators.required, Validators.minLength(6)])
+    password: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
   });
 
   // @ViewChild(SignaturePad) signaturePad: SignaturePad;

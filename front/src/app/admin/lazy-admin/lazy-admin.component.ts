@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-lazy-admin',
-  templateUrl: './lazy-admin.component.html',
-  styleUrls: ['./lazy-admin.component.css']
+  selector: "app-lazy-admin",
+  templateUrl: "./lazy-admin.component.html",
+  styleUrls: ["./lazy-admin.component.css"],
 })
 export class LazyAdminComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

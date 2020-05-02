@@ -11,7 +11,7 @@ export class AuthController {
 
   @Get('google/callback')
   @UseGuards(AuthGuard('google'))
- async googleLoginCallback(@Req() req, @Res() res): Promise<any> {
+  async googleLoginCallback(@Req() req, @Res() res): Promise<any> {
     //handles the Google OAuth2 Callback
     const jwt: string = req.user.jwt;
     if (jwt) {
@@ -22,7 +22,7 @@ export class AuthController {
   }
   @Get('protected')
   @UseGuards(AuthGuard('jwt'))
-  async protectedResource(): Promise<string>{
+  async protectedResource(): Promise<string> {
     return 'JWT is working';
   }
 }

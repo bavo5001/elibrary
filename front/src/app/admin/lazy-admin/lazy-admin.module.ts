@@ -1,13 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LazyAdminComponent } from './lazy-admin.component';
-
-
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { LazyAdminComponent } from "./lazy-admin.component";
 
 @NgModule({
   declarations: [LazyAdminComponent],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
-export class LazyAdminModule { }
+export class LazyAdminModule {}
