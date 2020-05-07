@@ -3,7 +3,7 @@
 
 @include mat-core();
 
-$candy-app-primary: mat-palette($mat-indigo);
+$candy-app-primary: mat-palette($mat-green);
 $candy-app-accent:  mat-palette($mat-deep-purple, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).

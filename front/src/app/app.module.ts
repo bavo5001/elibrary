@@ -17,14 +17,15 @@ import { ZXingScannerModule } from "@zxing/ngx-scanner";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { LoginComponent } from "./components/login/login.component";
-import { BooksComponent } from "./components/books/books.component";
+import {BooksComponent, BooksDialogComponent} from "./components/books/books.component";
 import { MatTableModule } from "@angular/material/table";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { BooksApiService } from "./components/books/books-api.service";
 import { MatCardModule } from "@angular/material/card";
+import {MatDialogModule, MatDialog, MatDialogRef} from "@angular/material/dialog";
 @NgModule({
-  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent],
+  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -46,6 +47,7 @@ import { MatCardModule } from "@angular/material/card";
     MatProgressSpinnerModule,
     NgxSpinnerModule,
     MatCardModule,
+    MatDialogModule
   ],
   providers: [BooksApiService],
   bootstrap: [AppComponent],

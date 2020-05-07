@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import 'reflect-metadata';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ReaderModule } from './reader/reader.module';
@@ -39,17 +39,17 @@ import { BooksModule } from './books/books.module';
     ReaderModule,
     BooksModule,
 
-    // GraphQLModule.forRootAsync({
-    //     useFactory: () => ({
-    //         autoSchemaFile: 'schema.gql',
-    //         playground: true,
-    //         debug: true,
-    //         cors: {
-    //             credentials: true,
-    //             origin: true,
-    //         },
-    //     }),
-    // }),
+    GraphQLModule.forRootAsync({
+        useFactory: () => ({
+            autoSchemaFile: 'schema.gql',
+            playground: true,
+            debug: true,
+            cors: {
+                credentials: true,
+                origin: true,
+            },
+        }),
+    }),
   ],
 })
 export class AppModule {}

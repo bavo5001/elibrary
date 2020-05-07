@@ -1,9 +1,28 @@
+<mat-card class="books__search">
 <h1>Books Api Search</h1>
-<input type="search" matInput #search>
-<button mat-raised-button color="primary" (click)="googleBooks(search.value)">Confirm</button>
-<div *ngFor="let book of books$">
-   <mat-card *ngIf="book" color="warn">
-     {{book.kind | json}}
-     <img src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="">
+  <label>
+  <input type="search" matInput #search class="search__input">
+</label>
+  <button mat-raised-button color="primary" (click)="googleBooks(search.value)"><span style="color:#fff">Confirm</span></button>
+<div *ngFor="let boo of books$">
+   <mat-card *ngIf="boo" color="warn">
+     {{boo.kind | json}}
+     <img src="{{boo.volumeInfo.imageLinks.smallThumbnail}}" alt="">
    </mat-card>
 </div>
+</mat-card>
+<!--DIALOG WINDOW---------------------------------------------------------------------------------------------------->
+<ol>
+  <li>
+    <mat-form-field>
+      <mat-label>What's your name?</mat-label>
+      <input matInput [(ngModel)]="name">
+    </mat-form-field>
+  </li>
+  <li>
+    <button mat-raised-button (click)="openDialog()" color="primary"><span color="#fff">Pick one</span></button>
+  </li>
+  <li *ngIf="book">
+    You chose: <i>{{book}}</i>
+  </li>
+</ol>
