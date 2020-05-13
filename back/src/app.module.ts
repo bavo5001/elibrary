@@ -7,6 +7,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ReaderModule } from './reader/reader.module';
 import { BooksModule } from './books/books.module';
+import {DefaultAdminModule} from "nestjs-admin";
 @Module({
   imports: [
     // SequelizeModule.forRootAsync({
@@ -50,6 +51,7 @@ import { BooksModule } from './books/books.module';
             },
         }),
     }),
+  DefaultAdminModule
   ],
 })
 export class AppModule {}

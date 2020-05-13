@@ -24,8 +24,9 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { BooksApiService } from "./components/books/books-api.service";
 import { MatCardModule } from "@angular/material/card";
 import {MatDialogModule, MatDialog, MatDialogRef} from "@angular/material/dialog";
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 @NgModule({
-  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent],
+  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

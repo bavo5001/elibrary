@@ -1,6 +1,4 @@
 import { NestFactory } from '@nestjs/core';
-const { v4: uuidv4 } = require('uuid');
-uuidv4();
 import * as dotenv from 'dotenv';
 dotenv.config();
 require('dotenv').config();
@@ -9,7 +7,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(process.env.PORT);
+  await app.listen(3000);
   await app.enableCors();
   const options = new DocumentBuilder()
     .setTitle('E-library Api')
