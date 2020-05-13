@@ -9,3 +9,8 @@
 .search__input{
   margin: 5px;
 }
+@media screen and (max-width: 992px){
+  .books__search{
+    width: 70%;
+  }
+}

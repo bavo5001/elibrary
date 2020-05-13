@@ -1,7 +1,7 @@
-import {AfterViewInit, Component, Inject, OnInit} from "@angular/core";
-import { BooksApiService } from "./books-api.service";
-import { Observable, throwError } from "rxjs";
+import {AfterViewInit, Component, Inject, ViewEncapsulation} from "@angular/core";
+import {BooksApiService} from "./books-api.service";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
+
 export interface DialogData {
   book: string;
   name: string;
@@ -9,7 +9,7 @@ export interface DialogData {
 @Component({
   selector: "app-books",
   templateUrl: "./books.component.html",
-  styleUrls: ["./books.component.css"],
+  styleUrls: ["./books.component.css"]
 })
 export class BooksComponent implements AfterViewInit {
   books$;
@@ -44,7 +44,7 @@ export class BooksComponent implements AfterViewInit {
 }
 @Component({
   selector: 'books-dialog',
-  templateUrl: 'books-dialog.component.html',
+  templateUrl: 'books-dialog.component.html'
 })
 export class BooksDialogComponent {
 

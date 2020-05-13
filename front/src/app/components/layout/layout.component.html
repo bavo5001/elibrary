@@ -1,0 +1,35 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" >
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon style="color: #fff">menu</mat-icon></button>
+    <h1 class="app-name">E-library</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 100 : 0">
+    <mat-sidenav class="menu-sidenav" #snav >
+      <mat-nav-list class="menu-sidenav-items">
+        <div class="menu-side">
+          <a mat-list-item routerLink="#" class="menu-item">
+          <span class="material-icons">dashboard</span>Dashboard
+        </a>
+        </div>
+        <div class="menu-side">
+        <a mat-list-item routerLink="#" class="menu-item">
+          <span class="material-icons">scanner</span>
+          Scan QR
+        </a>
+        </div>
+        <div class="menu-side">
+        <a mat-list-item routerLink="#" class="menu-item">
+        <span class="material-icons">bookmark</span> My Books
+        </a>
+          </div>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <app-books></app-books>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+

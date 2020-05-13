@@ -16,6 +16,7 @@ import { SignaturePadModule } from "angular2-signaturepad";
 import { ZXingScannerModule } from "@zxing/ngx-scanner";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
+import { LayoutComponent } from './components/layout/layout.component';
 import { LoginComponent } from "./components/login/login.component";
 import {BooksComponent, BooksDialogComponent} from "./components/books/books.component";
 import { MatTableModule } from "@angular/material/table";
@@ -23,10 +24,16 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { BooksApiService } from "./components/books/books-api.service";
 import { MatCardModule } from "@angular/material/card";
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import {MatIconModule} from "@angular/material/icon";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatListModule} from "@angular/material/list";
+import { LayoutModule } from '@angular/cdk/layout';
+
 @NgModule({
-  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, PageNotFoundComponent],
+  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, LayoutComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -48,7 +55,12 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     MatProgressSpinnerModule,
     NgxSpinnerModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatListModule,
+    LayoutModule
   ],
   providers: [BooksApiService],
   bootstrap: [AppComponent],
