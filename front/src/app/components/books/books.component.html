@@ -3,15 +3,17 @@
 <mat-card class="books__search">
 <h1>Books Api Search</h1>
   <label style="margin: 10px;">
-  <input type="search" matInput #search class="search__input" color="primary">
+  <input type="search" matInput #search class="search__input" >
 </label>
   <button mat-raised-button color="primary" (click)="googleBooks(search.value)"><span style="color:#fff">Confirm</span></button>
-<div *ngFor="let boo of books$">
-   <mat-card *ngIf="boo" color="warn">
-     {{boo.kind | json}}
-     <img src="{{boo.volumeInfo.imageLinks.smallThumbnail}}" alt="">
+  <div *ngIf="books">
+  <div *ngFor="let boo of books">
+   <mat-card color="warn" class="book__card">
+     <a target="_blank" href="{{boo.accessInfo.webReaderLink}}"><img src="{{boo.volumeInfo.imageLinks.smallThumbnail}}" alt=""></a>
+     {{boo.volumeInfo.title}}
    </mat-card>
 </div>
+  </div>
 </mat-card>
 
 <!--DIALOG WINDOW---------------------------------------------------------------------------------------------------->
@@ -19,13 +21,15 @@
   <li>
     <mat-form-field>
       <mat-label>What's your name?</mat-label>
-      <input matInput [(ngModel)]="name">
+      <label>
+   <input matInput [(ngModel)]="name">
+      </label>
     </mat-form-field>
   </li>
   <li>
     <button mat-raised-button (click)="openDialog()" color="primary"><span color="#fff">Pick one</span></button>
   </li>
-  <li *ngIf="book">
-    You chose: <i>{{book}}</i>
+  <li *ngIf="kniga">
+    You chose: <i>{{kniga}}</i>
   </li>
 </ol>

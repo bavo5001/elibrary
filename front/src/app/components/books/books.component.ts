@@ -1,7 +1,15 @@
-import {AfterViewInit, Component, Inject, ViewEncapsulation} from "@angular/core";
+import { Component, Inject, OnInit, ViewEncapsulation} from "@angular/core";
 import {BooksApiService} from "./books-api.service";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {Subscription} from "rxjs";
 
+export interface DataBooks {
+  id: string,
+  title: string,
+  autors: string,
+  description: string,
+  imgURL: string,
+}
 export interface DialogData {
   book: string;
   name: string;
@@ -11,40 +19,42 @@ export interface DialogData {
   templateUrl: "./books.component.html",
   styleUrls: ["./books.component.css"]
 })
-export class BooksComponent implements AfterViewInit {
-  books$;
+export class BooksComponent implements OnInit {
+ public books: [] = [];
 
   constructor(private booksApiService: BooksApiService, public dialog: MatDialog) {}
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this.booksApiService.SearchGoogleBooks("javascript").subscribe();
-  }
 
+  }
   googleBooks(s) {
     this.booksApiService
       .SearchGoogleBooks(s)
-      .subscribe((boo) => (this.books$ = boo));
+      .subscribe((data) => this.books = data.items);
   }
+
   // DIALOG WINDOW////////////////////////////////////////////////////////////////
 
-  book: string;
+  kniga: string;
   name: string;
 
   openDialog(): void {
     const dialogRef = this.dialog.open(BooksDialogComponent, {
       width: '320px',
-      data: {name: this.name, book: this.book}
+      data: {name: this.name, book: this.kniga}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.book = result;
+      this.kniga = result;
     });
   }
 }
 @Component({
   selector: 'books-dialog',
-  templateUrl: 'books-dialog.component.html'
+  templateUrl: 'books-dialog.component.html',
+
 })
 export class BooksDialogComponent {
 

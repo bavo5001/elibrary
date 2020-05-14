@@ -14,10 +14,10 @@ export class BooksApiService {
     this.http = http;
   }
 
-  SearchGoogleBooks(SearchInput): Observable<any> {
+  SearchGoogleBooks(SearchInput) {
     const encodedURI = encodeURI(
-      `${this.url}${SearchInput}&key=${environment.apiKey}&maxResults=3`
+      `${this.url}${SearchInput}&key=${environment.apiKey}`
     );
-    return this.http.get(encodedURI);
+    return this.http.get(encodedURI).pipe(map((response: any) => response));
   }
 }
