@@ -13,7 +13,6 @@ import { LazyAdminModule } from "./admin/lazy-admin/lazy-admin.module";
 
 import { AppComponent } from "./app.component";
 import { SignaturePadModule } from "angular2-signaturepad";
-import { ZXingScannerModule } from "@zxing/ngx-scanner";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { LayoutComponent } from './components/layout/layout.component';
@@ -31,11 +30,12 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatListModule} from "@angular/material/list";
 import { LayoutModule } from '@angular/cdk/layout';
+import { QrComponent } from './components/qr/qr.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, LayoutComponent, PageNotFoundComponent],
+  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, LayoutComponent, PageNotFoundComponent, QrComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production,
@@ -50,7 +50,6 @@ import { LayoutModule } from '@angular/cdk/layout';
     FormsModule,
     ReactiveFormsModule,
     SignaturePadModule,
-    ZXingScannerModule,
     MatTableModule,
     MatProgressSpinnerModule,
     NgxSpinnerModule,
