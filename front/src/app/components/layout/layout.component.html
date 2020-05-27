@@ -9,7 +9,7 @@
     <mat-sidenav class="menu-sidenav" #snav >
       <mat-nav-list class="menu-sidenav-items">
         <div class="menu-side">
-          <a mat-list-item class="menu-item">
+          <a mat-list-item class="menu-item" routerLink="/home/dashboard">
           <span class="material-icons">dashboard</span>Dashboard
         </a>
         </div>
@@ -20,7 +20,7 @@
         </a>
         </div>
         <div class="menu-side">
-        <a mat-list-item class="menu-item">
+        <a mat-list-item class="menu-item" routerLink="/home/books">
         <span class="material-icons">bookmark</span> My Books
         </a>
           </div>
@@ -28,7 +28,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <app-books></app-books>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

@@ -31,9 +31,15 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatListModule} from "@angular/material/list";
 import { LayoutModule } from '@angular/cdk/layout';
 import { QrComponent } from './components/qr/qr.component';
+import { HomeModule } from './components/layout/home.module';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import {NgQrScannerModule} from "angular2-qrscanner";
+import { ZXingScannerModule} from "@zxing/ngx-scanner";
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, LayoutComponent, PageNotFoundComponent, QrComponent],
+  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, LayoutComponent, PageNotFoundComponent, QrComponent, DashboardComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
@@ -43,6 +49,7 @@ import { QrComponent } from './components/qr/qr.component';
     GraphQLModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    LayoutModule,
     LazyAdminModule,
     MatFormFieldModule,
     MatInputModule,
@@ -59,7 +66,11 @@ import { QrComponent } from './components/qr/qr.component';
     MatIconModule,
     MatToolbarModule,
     MatListModule,
-    LayoutModule
+    HomeModule,
+    MatGridListModule,
+    MatMenuModule,
+    NgQrScannerModule,
+    ZXingScannerModule
   ],
   providers: [BooksApiService],
   bootstrap: [AppComponent],

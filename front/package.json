@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "format": "prettier --write \"src/**/*.ts\"",
     "dev:ssr": "ng run front:serve-ssr",
-    "serve:ssr": "node dist/front/server/main.js --port=4201",
+    "serve:ssr": "node dist/front/server/main.js",
     "build:ssr": "ng build --prod && ng run front:server:production",
     "prerender": "ng run front:prerender",
     "prebuild:ssr": "ngcc"
@@ -35,6 +35,8 @@
     "@nestjs/ng-universal": "^3.2.0",
     "@nestjs/platform-express": "^6.0.0",
     "@nguniversal/express-engine": "^9.1.1",
+    "@zxing/ngx-scanner": "^3.0.0",
+    "angular2-qrscanner": "^1.0.7",
     "angular2-signaturepad": "^2.11.0",
     "apollo-angular": "^1.8.0",
     "apollo-angular-link-http": "^1.9.0",

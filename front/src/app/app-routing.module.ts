@@ -8,13 +8,29 @@ import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.
 import {LayoutComponent} from "./components/layout/layout.component";
 import {QrComponent} from "./components/qr/qr.component";
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "login" },
-  { path: "admin", component: LazyAdminComponent },
-  { path: "auth", component: AuthComponent },
-  { path: "login", component: LoginComponent },
-  { path: "home", component: LayoutComponent},
-  { path: "home/qr", component: QrComponent},
-  { path: "**", component: PageNotFoundComponent}
+  // { path: "", pathMatch: "full", redirectTo: "login" },
+  // { path: "admin", component: LazyAdminComponent },
+  // { path: "auth", component: AuthComponent },
+  // { path: "login", component: LoginComponent },
+  // { path: "home", component: LayoutComponent},
+  // { path: "home/qr", component: QrComponent},
+  // { path: "**", component: PageNotFoundComponent}
+  {
+    path: "home", component: LayoutComponent,
+    loadChildren: "./components/layout/home.module#HomeModule"
+  },
+  {
+    path: "", pathMatch:"full", redirectTo: "login"
+  },
+  {
+    path: "login", component: LoginComponent
+  },
+  {
+    path: "auth", component: AuthComponent
+  },
+  {
+    path: "**", component: PageNotFoundComponent
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
