@@ -4,6 +4,7 @@ import {QrComponent} from "../qr/qr.component";
 import {BooksComponent} from "../books/books.component";
 import {PageNotFoundComponent} from "../page-not-found/page-not-found.component";
 import {DashboardComponent} from "../dashboard/dashboard.component";
+import {FeatureComponent} from "../feature/feature.component";
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'qr', component: QrComponent},
   {path: 'books', component: BooksComponent},
+  {path: 'feature', component: FeatureComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 @NgModule({
