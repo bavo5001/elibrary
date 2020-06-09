@@ -1,8 +1,8 @@
 {
-  "name": "com.elibrary.hello",
+  "name": "front",
+  "version": "1.0.0",
   "displayName": "e-library",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
-  "main": "index.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",

@@ -2,9 +2,9 @@
 <!--GoogleBooksApi-->
 <mat-card class="books__search">
 <h1>Books Api Search</h1>
-  <label style="margin: 10px;">
-  <input type="search" matInput #search class="search__input" >
-</label>
+  <mat-form-field style="margin: 5px;">
+  <input type="search" color="primary" matInput #search class="search__input" placeholder="Search books">
+  </mat-form-field>
   <button mat-raised-button color="primary" (click)="googleBooks(search.value)"><span style="color:#fff">Confirm</span></button>
   <div *ngIf="books">
   <div *ngFor="let boo of books">

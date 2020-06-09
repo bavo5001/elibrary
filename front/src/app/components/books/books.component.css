@@ -4,10 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0px auto;
-}
-.search__input{
-  margin: 5px;
+  margin: 10px auto;
 }
 .book__card{
   margin-top: 10px;
