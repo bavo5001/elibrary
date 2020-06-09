@@ -1,6 +1,6 @@
 <section class="full">
  <section class="auth__section">
-   <img class="sign_png" src="assets/icons/study.png" alt="">
+   <img class="sign_png" src="assets/icons/user.png" alt="">
   <h1>Sign up</h1>
 
   <form [formGroup]="form" (ngSubmit)="OnSubmit()">
@@ -16,7 +16,7 @@
       <mat-label>Password</mat-label>
         <input type="password" matInput formControlName="password" color="primary" required placeholder="Password">
     </mat-form-field>
-    <div class="form__field"><button class="form__button" color="primary" mat-raised-button [disabled]="form.invalid">Sign up it's free</button></div>
+    <div class="form__field"><button class="form__button" color="primary" mat-raised-button [disabled]="form.invalid" routerLink="/home">Sign up it's free</button></div>
   </form>
   <div class="auth__etc">
     <h4><a routerLink="/login">Have an account? Sign in</a></h4>

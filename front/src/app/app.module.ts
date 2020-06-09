@@ -38,9 +38,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import {NgQrScannerModule} from "angular2-qrscanner";
 import { ZXingScannerModule} from "@zxing/ngx-scanner";
 import { FeatureComponent } from './components/feature/feature.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, LayoutComponent, PageNotFoundComponent, QrComponent, DashboardComponent, FeatureComponent],
+  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, LayoutComponent, PageNotFoundComponent, QrComponent, DashboardComponent, FeatureComponent, ProfileComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,

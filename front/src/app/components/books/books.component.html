@@ -6,14 +6,18 @@
   <input type="search" color="primary" matInput #search class="search__input" placeholder="Search books">
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="googleBooks(search.value)"><span style="color:#fff">Confirm</span></button>
-  <div *ngIf="books">
+  <div *ngIf="books; else elseBooks">
   <div *ngFor="let boo of books">
    <mat-card color="warn" class="book__card">
      <a target="_blank" href="{{boo.accessInfo.webReaderLink}}"><img src="{{boo.volumeInfo.imageLinks.smallThumbnail}}" alt=""></a>
      {{boo.volumeInfo.title}}
    </mat-card>
+
 </div>
   </div>
+  <ng-container #elseBooks>
+    <small color="warning"><sup>*</sup>Please correct write name book</small>
+  </ng-container>
 </mat-card>
 
 <!--DIALOG WINDOW---------------------------------------------------------------------------------------------------->
