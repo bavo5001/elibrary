@@ -6,6 +6,7 @@ import {PageNotFoundComponent} from "../page-not-found/page-not-found.component"
 import {DashboardComponent} from "../dashboard/dashboard.component";
 import {FeatureComponent} from "../feature/feature.component";
 import {ProfileComponent} from "../profile/profile.component";
+import {SignatureComponent} from "../signature/signature.component";
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'books', component: BooksComponent},
   {path: 'feature', component: FeatureComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'pad', component: SignatureComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 @NgModule({

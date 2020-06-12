@@ -8,3 +8,12 @@
   height: 15%;
   border-radius: 1px;
 }
+@media screen and (max-width: 800px) {
+  .big__image{
+    margin: 0 auto;
+    text-align: center;
+    width: 70%;
+    height: auto;
+    border-radius: 3px;
+  }
+}

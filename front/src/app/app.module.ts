@@ -39,9 +39,15 @@ import {NgQrScannerModule} from "angular2-qrscanner";
 import { ZXingScannerModule} from "@zxing/ngx-scanner";
 import { FeatureComponent } from './components/feature/feature.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import {AuthService} from "./components/auth/auth.service";
+import {AngularFireAuth, AngularFireAuthModule} from "@angular/fire/auth";
+import {AngularFirestore, AngularFirestoreModule} from "@angular/fire/firestore";
+import {AngularFireDatabaseModule} from "@angular/fire/database";
+import {AngularFireModule} from "@angular/fire";
+import { SignatureComponent } from './components/signature/signature.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, LayoutComponent, PageNotFoundComponent, QrComponent, DashboardComponent, FeatureComponent, ProfileComponent],
+  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, LayoutComponent, PageNotFoundComponent, QrComponent, DashboardComponent, FeatureComponent, ProfileComponent, SignatureComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
@@ -72,9 +78,13 @@ import { ProfileComponent } from './components/profile/profile.component';
     MatGridListModule,
     MatMenuModule,
     NgQrScannerModule,
-    ZXingScannerModule
+    ZXingScannerModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
-  providers: [BooksApiService],
+  providers: [BooksApiService, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
