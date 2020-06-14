@@ -43,7 +43,7 @@ export class SignatureComponent implements OnInit, AfterViewInit {
     }
   }
 
-  dataURLToBlob(dataURL) {
+  dataURLToBlob(dataURL): object {
     // Code taken from https://github.com/ebidel/filer.js
     const parts = dataURL.split(';base64,');
     const contentType = parts[0].split(':')[1];

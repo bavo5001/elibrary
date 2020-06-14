@@ -1,6 +1,13 @@
 *{
   margin: 0;
 }
+.stroked{
+  color:#4caf50;
+  background-color: #fff;
+}
+.fff{
+  color: #fff;
+}
 .example-container {
   display: flex;
   flex-direction: column;
@@ -46,4 +53,18 @@ h1.app-name {
   .example-sidenav-container {
     margin-top: 0px !important;
   }
+}
+.wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 0px 0px 20px;
+}
+.wrapper__right{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }

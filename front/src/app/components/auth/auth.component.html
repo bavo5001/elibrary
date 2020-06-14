@@ -3,21 +3,22 @@
    <img class="sign_png" src="assets/icons/user.png" alt="">
   <h1>Sign up</h1>
 
-  <form [formGroup]="form" (ngSubmit)="OnSubmit()">
+  <form #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)">
     <mat-form-field color="primary" class="form__field">
       <mat-label>Name</mat-label>
-        <input type="text" matInput formControlName="name" color="primary" required placeholder="Name">
+        <input  ngModel #name="ngModel" name="name" type="text" matInput color="primary" required placeholder="Name">
     </mat-form-field>
     <mat-form-field class="form__field">
-      <mat-label>Login</mat-label>
-        <input type="text" matInput formControlName="login" color="primary" required placeholder="Login">
+      <mat-label>Email</mat-label>
+        <input ngModel #email="ngModel" name="email" type="email" matInput color="primary" required placeholder="Login">
     </mat-form-field>
     <mat-form-field class="form__field">
       <mat-label>Password</mat-label>
-        <input type="password" matInput formControlName="password" color="primary" required placeholder="Password">
+        <input ngModel #password="ngModel" name="password" type="password" matInput color="primary" required placeholder="Password">
     </mat-form-field>
-    <div class="form__field"><button class="form__button" color="primary" mat-raised-button [disabled]="form.invalid" routerLink="/home">Sign up it's free</button></div>
+    <div class="form__field"><button class="form__button" color="primary" mat-raised-button [disabled]="userRegForm.invalid"><span style="color:#fff">Sign up it's free</span></button></div>
   </form>
+   <div *ngIf="authError">{{authError?.message}}</div>
   <div class="auth__etc">
     <h4><a routerLink="/login">Have an account? Sign in</a></h4>
     <h4><a href="#">Sign up with Google</a></h4>

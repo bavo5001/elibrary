@@ -1,12 +1,26 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches" >
   <mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()"><mat-icon style="color: #fff">menu</mat-icon></button>
-    <h1 class="app-name">E-library</h1>
+    <button mat-icon-button matTooltip="Click me" (click)="snav.toggle()"><mat-icon style="color: #fff">home</mat-icon></button>
+    <div class="wrapper">
+      <h1 class="app-name ml-auto p-2">Page Flip library</h1>
+      <div class="wrapper__right">
+        <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Change theme"><mat-icon>invert_colors</mat-icon></button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="changeTheme('light-theme')">Light</button>
+          <button mat-menu-item (click)="changeTheme('dark-theme')">Dark</button>
+        </mat-menu>
+        <mat-icon>account_circle</mat-icon>
+        <h2 class="fff" style="margin:0px 10px" *ngIf="user">{{user?.displayName}}</h2>
+        <button class="stroked" mat-stroked-button *ngIf="!user" (click)="register()">Register</button>
+        <button  class="stroked" mat-stroked-button  *ngIf="user" (click)="logout()">Logout</button>
+        <button class="stroked"  mat-stroked-button *ngIf="!user" (click)="login()">Login</button>
+      </div>
+    </div>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container"
                          [style.marginTop.px]="mobileQuery.matches ? 100 : 0">
-    <mat-sidenav class="menu-sidenav" #snav >
+    <mat-sidenav class="menu-sidenav" #snav>
       <mat-nav-list class="menu-sidenav-items">
         <div class="menu-side">
           <a mat-list-item class="menu-item" routerLink="/home/profile">

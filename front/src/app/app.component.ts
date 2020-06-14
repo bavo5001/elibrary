@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, HostBinding, OnInit} from "@angular/core";
 import { NgxSpinnerService } from "ngx-spinner";
+import {ThemingService} from "./components/layout/theming.service";
 
 @Component({
   selector: "app-root",
@@ -7,12 +8,17 @@ import { NgxSpinnerService } from "ngx-spinner";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
-  constructor(private spinner: NgxSpinnerService) {}
+  @HostBinding('class') public cssClass: string;
+  constructor(private spinner: NgxSpinnerService,
+              private themingService: ThemingService) {}
 
   ngOnInit() {
     this.spinner.show().then();
     setTimeout(() => {
       this.spinner.hide().then();
     }, 2500);
+    this.themingService.theme.subscribe((theme: string) => {
+      this.cssClass = theme;
+    });
   }
 }

@@ -40,16 +40,17 @@ import { ZXingScannerModule} from "@zxing/ngx-scanner";
 import { FeatureComponent } from './components/feature/feature.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import {AuthService} from "./components/auth/auth.service";
-import {AngularFireAuth, AngularFireAuthModule} from "@angular/fire/auth";
-import {AngularFirestore, AngularFirestoreModule} from "@angular/fire/firestore";
+import { AngularFireAuthModule} from "@angular/fire/auth";
+import { AngularFirestoreModule} from "@angular/fire/firestore";
 import {AngularFireDatabaseModule} from "@angular/fire/database";
 import {AngularFireModule} from "@angular/fire";
 import { SignatureComponent } from './components/signature/signature.component';
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, LayoutComponent, PageNotFoundComponent, QrComponent, DashboardComponent, FeatureComponent, ProfileComponent, SignatureComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production,
@@ -82,7 +83,8 @@ import { SignatureComponent } from './components/signature/signature.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    MatTooltipModule
   ],
   providers: [BooksApiService, AuthService],
   bootstrap: [AppComponent],

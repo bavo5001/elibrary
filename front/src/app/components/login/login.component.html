@@ -4,17 +4,24 @@
 
   <h1>Sign in</h1>
 
-  <form [formGroup]="form" (ngSubmit)="OnSubmit()">
+  <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
     <mat-form-field class="form__field">
-      <mat-label>Login</mat-label>
-        <input type="text" matInput formControlName="login" color="warning" required>
+      <mat-label>Email</mat-label>
+        <input matInput ngModel #email="ngModel" name="email" type="email" required placeholder="Email">
     </mat-form-field>
     <mat-form-field class="form__field">
       <mat-label>Password</mat-label>
-        <input type="password" matInput formControlName="password" color="warning" required>
+        <input matInput ngModel #password="ngModel" name="password" type="password" required placeholder="Password">
     </mat-form-field>
-    <div class="form__field"><button class="form__button" mat-raised-button [disabled]="form.invalid" color="primary" routerLink="/home">Sign in</button></div>
+    <div class="form__field"><button class="form__button" mat-raised-button [disabled]="loginForm.invalid" color="primary" type="submit"><span style="color:#fff">Sign in</span></button></div>
   </form>
+  <div class="col-12">
+    <div class="row" *ngIf="authError">
+      <div class="col-12 alert alert-danger">
+        <span color="warning">{{ authError?.message }}</span>
+      </div>
+    </div>
+  </div>
   <div class="auth__etc">
     <h4><a routerLink="/auth">Don't have account? Sign up</a></h4>
     <h4><a href="#">Sign in with Google</a></h4>
