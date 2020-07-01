@@ -7,6 +7,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ReaderModule } from './reader/reader.module';
 import { BooksModule } from './books/books.module';
+import {ReaderEntity} from "./reader/reader.entity";
 @Module({
   imports: [
     // SequelizeModule.forRootAsync({
@@ -29,7 +30,7 @@ import { BooksModule } from './books/books.module';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DATABASE,
-      models: [],
+      models: [ReaderEntity],
     }),
     AuthModule,
     UsersModule,

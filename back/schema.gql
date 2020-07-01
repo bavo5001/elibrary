@@ -9,6 +9,7 @@ The javascript `Date` as string. Type represents date and time as the ISO Date s
 scalar DateTime
 
 type Query {
+  full: [ReaderEntity!]!
   readerAll(id: String!): ReaderEntity!
 }
 
@@ -20,7 +21,6 @@ type ReaderEntity {
   nationality: String!
   education: String!
   profession: String!
-  name_college: String!
   work: String!
   tel: String!
   passport_seria: String!

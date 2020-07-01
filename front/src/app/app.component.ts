@@ -1,6 +1,7 @@
 import {Component, HostBinding, OnInit} from "@angular/core";
 import { NgxSpinnerService } from "ngx-spinner";
 import {ThemingService} from "./components/layout/theming.service";
+import {SwUpdate} from "@angular/service-worker";
 
 @Component({
   selector: "app-root",
@@ -9,8 +10,16 @@ import {ThemingService} from "./components/layout/theming.service";
 })
 export class AppComponent implements OnInit {
   @HostBinding('class') public cssClass: string;
+
   constructor(private spinner: NgxSpinnerService,
-              private themingService: ThemingService) {}
+              private themingService: ThemingService,
+              private updates: SwUpdate) {
+    updates.available.subscribe(event =>{
+      updates.activateUpdate().then(()=>{
+        document.location.reload();
+      })
+    })
+  }
 
   ngOnInit() {
     this.spinner.show().then();

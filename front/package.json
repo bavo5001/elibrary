@@ -41,6 +41,7 @@
     "@zxing/ngx-scanner": "^3.0.0",
     "angular2-qrscanner": "^1.0.7",
     "angular2-signaturepad": "^2.11.0",
+    "animate.css": "^4.1.0",
     "apollo-angular": "^1.8.0",
     "apollo-angular-link-http": "^1.9.0",
     "apollo-cache-inmemory": "^1.6.0",

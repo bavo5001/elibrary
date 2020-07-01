@@ -1,4 +1,4 @@
-import { Column, Model, Table } from 'sequelize-typescript';
+import {Column, Model, PrimaryKey, Table} from 'sequelize-typescript';
 import {Field, ID, ObjectType} from "type-graphql";
 import {ApiProperty} from "@nestjs/swagger";
 @ObjectType()
@@ -6,7 +6,7 @@ import {ApiProperty} from "@nestjs/swagger";
 export class ReaderEntity extends Model<ReaderEntity> {
   @ApiProperty()
   @Field(type=>ID)
-  @Column
+  @Column({primaryKey: true})
   id: string;
 
   @ApiProperty()
@@ -38,10 +38,6 @@ export class ReaderEntity extends Model<ReaderEntity> {
   @Field()
   @Column
   profession: string;
-
-  @ApiProperty()
-  @Field()
-  @Column
 
   @ApiProperty()
   name_college: string;

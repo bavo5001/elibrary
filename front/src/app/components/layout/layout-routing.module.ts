@@ -7,6 +7,7 @@ import {DashboardComponent} from "../dashboard/dashboard.component";
 import {FeatureComponent} from "../feature/feature.component";
 import {ProfileComponent} from "../profile/profile.component";
 import {SignatureComponent} from "../signature/signature.component";
+import {FreebooksComponent} from "../freebooks/freebooks.component";
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'feature', component: FeatureComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'pad', component: SignatureComponent},
+  {path: 'freebooks', component: FreebooksComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 @NgModule({

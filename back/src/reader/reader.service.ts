@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import {InjectModel} from "@nestjs/sequelize";
 import {ReaderEntity} from "./reader.entity";
+import {ReaderInput} from "./reader.input";
 
 @Injectable()
 export class ReaderService {
@@ -8,6 +9,10 @@ export class ReaderService {
   }
   async findAll(): Promise<ReaderEntity[]>{
     return this.readerModel.findAll();
+  }
+  async create(reader): Promise<ReaderEntity>{
+    const readerUser = new this.readerModel(reader);
+    return readerUser.save();
   }
   async findOne(id: string): Promise<ReaderEntity>{
     return this.readerModel.findOne({

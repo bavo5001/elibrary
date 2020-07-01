@@ -1,0 +1,22 @@
+<mat-card class="books__search">
+  <h1>Search Free Books</h1>
+  <mat-form-field style="margin: 5px;">
+    <input type="search" color="primary" matInput #search class="search__input" placeholder="Search books">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="FreebasesSearch(search.value)"><span style="color:#fff">Confirm</span></button>
+  <div *ngIf="freebooks">
+    <div *ngFor="let boo of freebooks">
+      <mat-card color="warn" class="book__card">
+<!--        <a target="_blank" href="{{boo.accessInfo.webReaderLink}}"><img src="{{boo.volumeInfo.imageLinks.smallThumbnail}}" alt=""></a>-->
+        {{boo.bib_key}}
+        {{boo.preview}}
+        {{boo.thumbnail_url}}
+        {{boo.preview_url}}
+      </mat-card>
+    </div>
+
+<!--  </div>-->
+<!--  <ng-container #elseBooks>-->
+<!--    <small color="warning"><sup>*</sup>Please correct write name book</small>-->
+<!--  </ng-container>-->
+<!--</mat-card>-->

@@ -7,11 +7,11 @@
   <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
     <mat-form-field class="form__field">
       <mat-label>Email</mat-label>
-        <input matInput ngModel #email="ngModel" name="email" type="email" required placeholder="Email">
+        <input matInput ngModel #email="ngModel" name="email" type="email" required>
     </mat-form-field>
     <mat-form-field class="form__field">
       <mat-label>Password</mat-label>
-        <input matInput ngModel #password="ngModel" name="password" type="password" required placeholder="Password">
+        <input matInput ngModel #password="ngModel" name="password" type="password" required>
     </mat-form-field>
     <div class="form__field"><button class="form__button" mat-raised-button [disabled]="loginForm.invalid" color="primary" type="submit"><span style="color:#fff">Sign in</span></button></div>
   </form>
@@ -28,7 +28,7 @@
   </div>
 </section>
   <section class="hello">
-   <h2 class="hello__h2">Hello, Welcome back</h2>
-    <h4 class="hello__h4">Sign into your account here</h4>
+   <h2 class="hello__h2 animate__animated animate__bounce">Hello, Welcome back</h2>
+    <h4 class="hello__h4 animate__animated animate__bounce animate__delay-2s">Sign into your account here</h4>
   </section>
 </section>

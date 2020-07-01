@@ -1,11 +1,16 @@
 import { Resolver } from '@nestjs/graphql';
 import {ReaderEntity} from "./reader.entity";
 import {ReaderService} from "./reader.service";
-import {Arg, Query} from "type-graphql";
+import {Arg, Args, Mutation, Query} from "type-graphql";
+import {ReaderInput} from "./reader.input";
 
 @Resolver('ReaderEntity')
 export class ReaderResolver {
     constructor(private readerService: ReaderService) {
+    }
+    @Query(() => [ReaderEntity])
+    async full(): Promise<ReaderEntity[]> {
+        return await this.readerService.findAll();
     }
     @Query(returns => ReaderEntity)
     async readerAll(@Arg("id") id: string){
@@ -15,4 +20,8 @@ export class ReaderResolver {
         }
      return reader;
     }
+    // @Mutation(() => ReaderEntity)
+    // async createReader(@Args('input') input: ReaderInput){
+    //     return this.readerService.create(input);
+    // }
 }

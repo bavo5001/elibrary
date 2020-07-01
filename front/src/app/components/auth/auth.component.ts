@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { SignaturePad } from "angular2-signaturepad/signature-pad";
 import {AuthService} from "./auth.service";
 
 @Component({
@@ -22,14 +20,5 @@ export class AuthComponent implements OnInit {
   createUser(frm) {
     this.auth.createUser(frm.value);
   }
-
-  // form = new FormGroup({
-  //   name: new FormControl(null, Validators.required),
-  //   login: new FormControl(null, Validators.required),
-  //   password: new FormControl(null, [
-  //     Validators.required,
-  //     Validators.minLength(6),
-  //   ]),
-  // });
 
 }

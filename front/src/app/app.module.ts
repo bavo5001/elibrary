@@ -46,9 +46,10 @@ import {AngularFireDatabaseModule} from "@angular/fire/database";
 import {AngularFireModule} from "@angular/fire";
 import { SignatureComponent } from './components/signature/signature.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
+import { FreebooksComponent } from './components/freebooks/freebooks.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, LayoutComponent, PageNotFoundComponent, QrComponent, DashboardComponent, FeatureComponent, ProfileComponent, SignatureComponent],
+  declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, LayoutComponent, PageNotFoundComponent, QrComponent, DashboardComponent, FeatureComponent, ProfileComponent, SignatureComponent, FreebooksComponent],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,

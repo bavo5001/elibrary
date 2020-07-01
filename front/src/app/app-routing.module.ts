@@ -7,6 +7,7 @@ import { LazyAdminComponent } from "./admin/lazy-admin/lazy-admin.component";
 import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 import {LayoutComponent} from "./components/layout/layout.component";
 import {QrComponent} from "./components/qr/qr.component";
+import {AuthGuard} from "./components/auth/auth.guard";
 const routes: Routes = [
   // { path: "", pathMatch: "full", redirectTo: "login" },
   // { path: "admin", component: LazyAdminComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   // { path: "**", component: PageNotFoundComponent}
   {
     path: "home", component: LayoutComponent,
-    loadChildren: "./components/layout/home.module#HomeModule"
+    loadChildren: "./components/layout/home.module#HomeModule",
+    canActivate: [AuthGuard]
   },
   {
     path: "", pathMatch:"full", redirectTo: "login"

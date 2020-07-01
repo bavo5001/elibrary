@@ -6,15 +6,15 @@
   <form #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)">
     <mat-form-field color="primary" class="form__field">
       <mat-label>Name</mat-label>
-        <input  ngModel #name="ngModel" name="name" type="text" matInput color="primary" required placeholder="Name">
+        <input  ngModel #name="ngModel" name="name" type="text" matInput color="primary" required>
     </mat-form-field>
     <mat-form-field class="form__field">
       <mat-label>Email</mat-label>
-        <input ngModel #email="ngModel" name="email" type="email" matInput color="primary" required placeholder="Login">
+        <input ngModel #email="ngModel" name="email" type="email" matInput color="primary" required>
     </mat-form-field>
     <mat-form-field class="form__field">
       <mat-label>Password</mat-label>
-        <input ngModel #password="ngModel" name="password" type="password" matInput color="primary" required placeholder="Password">
+        <input ngModel #password="ngModel" name="password" type="password" matInput color="primary" required>
     </mat-form-field>
     <div class="form__field"><button class="form__button" color="primary" mat-raised-button [disabled]="userRegForm.invalid"><span style="color:#fff">Sign up it's free</span></button></div>
   </form>
@@ -25,7 +25,7 @@
   </div>
  </section>
   <section class="try">
-    <h2 class="try__h2">Try E-library free for 14 days</h2>
+    <h2 class="try__h2">Try E-library free for 365 days</h2>
     <h4 class="try__h4">No credit card required</h4>
   </section>
 </section>
