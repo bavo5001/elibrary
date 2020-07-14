@@ -47,7 +47,11 @@ import {AngularFireModule} from "@angular/fire";
 import { SignatureComponent } from './components/signature/signature.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { FreebooksComponent } from './components/freebooks/freebooks.component';
+import { registerLocaleData } from '@angular/common';
+import localeuk from '@angular/common/locales/ru-UA';
 
+// the second parameter 'fr-FR' is optional
+registerLocaleData(localeuk);
 @NgModule({
   declarations: [AppComponent, AuthComponent, LoginComponent, BooksComponent, BooksDialogComponent, LayoutComponent, PageNotFoundComponent, QrComponent, DashboardComponent, FeatureComponent, ProfileComponent, SignatureComponent, FreebooksComponent],
   imports: [
